@@ -29,6 +29,8 @@ img { display: block; max-width: 100%; }
 .icon-button:hover { color: var(--red); }
 .badge-wrap { position: relative; }
 .badge-wrap b { position: absolute; top: -1px; right: -3px; min-width: 16px; height: 16px; padding: 0 4px; display: grid; place-items: center; color: #fff; background: var(--red); border-radius: 50%; font-size: 9px; line-height: 1; }
+.wishlist-symbol { color: var(--red); font-size: 22px; line-height: 1; }
+.header-actions .badge-wrap[href="#/cart"] { color: #111; }
 .mobile-menu-button { display: none; }
 .global-search { padding: 14px 5%; display: flex; gap: 12px; background: var(--soft); border-bottom: 1px solid var(--line); }
 .global-search input { flex: 1; min-width: 0; padding: 12px 14px; border: 1px solid var(--line); background: #fff; }

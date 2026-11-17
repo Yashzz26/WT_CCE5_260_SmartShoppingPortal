@@ -23,6 +23,9 @@ const iconPaths = {
 };
 const icon = (name) => `<svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${iconPaths[name] || iconPaths.arrow}</svg>`;
 const safe = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" })[char]);
+document.querySelectorAll("[data-icon]").forEach((element) => {
+  element.innerHTML = icon(element.dataset.icon);
+});
 const readStorage = (key, fallback) => {
   try {
     const value = JSON.parse(localStorage.getItem(key) || "null");
