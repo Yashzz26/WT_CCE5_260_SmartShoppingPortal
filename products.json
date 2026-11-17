@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Air Street High",
+    "category": "Sneakers",
+    "price": 1599,
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900",
+    "color": "Red",
+    "sizes": ["6", "7", "8", "9", "10"],
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "name": "Retro Court Classic",
+    "category": "Sneakers",
+    "price": 2199,
+    "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=900",
+    "color": "White",
+    "sizes": ["6", "7", "8", "9", "10"],
+    "rating": 4.6
+  },
+  {
+    "id": 3,
+    "name": "Urban Runner",
+    "category": "Sneakers",
+    "price": 1899,
+    "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=900",
+    "color": "Tan",
+    "sizes": ["7", "8", "9", "10"],
+    "rating": 4.7
+  },
+  {
+    "id": 4,
+    "name": "Essential Oversized Hoodie",
+    "category": "Clothing",
+    "price": 1799,
+    "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=900",
+    "color": "Charcoal",
+    "sizes": ["S", "M", "L", "XL"],
+    "rating": 4.8
+  },
+  {
+    "id": 5,
+    "name": "Classic Black Hoodie",
+    "category": "Clothing",
+    "price": 1499,
+    "image": "https://images.unsplash.com/photo-1578681994506-b8f463449011?w=900",
+    "color": "Black",
+    "sizes": ["S", "M", "L", "XL"],
+    "rating": 4.9
+  },
+  {
+    "id": 6,
+    "name": "Minimal Street Tee",
+    "category": "Clothing",
+    "price": 799,
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=900",
+    "color": "White",
+    "sizes": ["S", "M", "L", "XL"],
+    "rating": 4.5
+  },
+  {
+    "id": 7,
+    "name": "Everyday Canvas",
+    "category": "Sneakers",
+    "price": 1299,
+    "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=900",
+    "color": "Black",
+    "sizes": ["6", "7", "8", "9", "10"],
+    "rating": 4.6
+  },
+  {
+    "id": 8,
+    "name": "Premium Street Jacket",
+    "category": "Clothing",
+    "price": 2499,
+    "image": "https://images.unsplash.com/photo-1544923246-77307dd654cb?w=900",
+    "color": "Neutral",
+    "sizes": ["S", "M", "L", "XL"],
+    "rating": 4.7
+  }
+]

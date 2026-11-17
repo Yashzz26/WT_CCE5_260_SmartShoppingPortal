@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="KICKORA streetwear and sneakers shopping demo"
+    />
+    <title>KICKORA | Step Up Your Style</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      ✦ Free shipping on orders over ₹2,999 <span>↻ 30-day easy returns</span>
+    </div>
+    <header>
+      <a class="logo" href="#/"
+        >KICK<span>ORA</span><small>STEP UP YOUR GAME</small></a
+      >
+      <nav>
+        <a href="#/">HOME</a><a href="#/shop">SHOP</a
+        ><a href="#/shop?category=Sneakers">SNEAKERS</a
+        ><a href="#/shop?category=Clothing">STREETWEAR</a>
+      </nav>
+      <div class="header-actions">
+        <button id="searchToggle" aria-label="Search products">⌕</button
+        ><a href="#/cart" aria-label="Shopping cart"
+          >♧ <b id="cartCount">0</b></a
+        ><button id="menuToggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </header>
+    <div id="searchBar" class="searchbar hidden">
+      <input
+        id="globalSearch"
+        placeholder="Search sneakers, hoodies and more..."
+        aria-label="Search products"
+      />
+    </div>
+    <main id="app"></main>
+    <footer>
+      <div>
+        <h2>KICK<span>ORA</span></h2>
+        <p>Everyday essentials. Elevated street style.</p>
+      </div>
+      <div>
+        <h4>EXPLORE</h4>
+        <a href="#/">Home</a><a href="#/shop">Shop all</a
+        ><a href="#/cart">Your cart</a>
+      </div>
+      <div>
+        <h4>HELP</h4>
+        <p>Free shipping above ₹2,999</p>
+        <p>30-day returns</p>
+        <p>Demo store — no real purchases</p>
+      </div>
+      <p class="copyright">© 2026 KICKORA</p>
+    </footer>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>
