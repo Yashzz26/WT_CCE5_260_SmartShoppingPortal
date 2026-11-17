@@ -5,58 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="KICKORA streetwear and sneakers shopping demo"
+      content="KICKORA premium sneakers and streetwear shopping portal"
     />
     <title>KICKORA | Step Up Your Style</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="topbar">
-      ✦ Free shipping on orders over ₹2,999 <span>↻ 30-day easy returns</span>
+    <div class="announcement">
+      <span>Free shipping on orders over ₹999</span>
+      <span>Easy 30-day returns</span>
+      <span>Authentic products</span>
     </div>
-    <header>
-      <a class="logo" href="#/"
-        >KICK<span>ORA</span><small>STEP UP YOUR GAME</small></a
-      >
-      <nav>
-        <a href="#/">HOME</a><a href="#/shop">SHOP</a
-        ><a href="#/shop?category=Sneakers">SNEAKERS</a
-        ><a href="#/shop?category=Clothing">STREETWEAR</a>
+    <header class="site-header">
+      <a class="brand" href="/" data-link aria-label="KICKORA home">
+        KICK<span>ORA</span>
+        <small>STEP UP YOUR GAME</small>
+      </a>
+      <button class="icon-button mobile-menu-button" data-menu-toggle aria-label="Open menu">
+        <span class="icon" data-icon="menu"></span>
+      </button>
+      <nav class="main-nav" data-nav aria-label="Main navigation">
+        <a href="#/" data-link data-nav-route="/">Home</a>
+        <a href="#/shop" data-link data-nav-route="/shop">Shop</a>
+        <a href="#/shop?gender=Men" data-link data-nav-route="/men">Men</a>
+        <a href="#/shop?gender=Women" data-link data-nav-route="/women">Women</a>
+        <a href="#/shop?new=true" data-link data-nav-route="/new-arrivals">New Arrivals</a>
+        <a href="#/collections" data-link data-nav-route="/collections">Collections</a>
+        <a href="#/shop?sale=true" data-link data-nav-route="/sale">Sale</a>
       </nav>
       <div class="header-actions">
-        <button id="searchToggle" aria-label="Search products">⌕</button
-        ><a href="#/cart" aria-label="Shopping cart"
-          >♧ <b id="cartCount">0</b></a
-        ><button id="menuToggle" aria-label="Toggle menu">☰</button>
+        <button class="icon-button" data-search-toggle aria-label="Search products">
+          <span class="icon" data-icon="search"></span>
+        </button>
+        <a class="icon-button" href="#/about" data-link aria-label="Account and about">
+          <span class="icon" data-icon="user"></span>
+        </a>
+        <a class="icon-button badge-wrap" href="#/wishlist" data-link aria-label="Wishlist">
+          <span class="icon" data-icon="heart"></span><b data-wishlist-count>0</b>
+        </a>
+        <a class="icon-button badge-wrap" href="#/cart" data-link aria-label="Shopping bag">
+          <span class="icon" data-icon="bag"></span><b data-cart-count>0</b>
+        </a>
       </div>
     </header>
-    <div id="searchBar" class="searchbar hidden">
-      <input
-        id="globalSearch"
-        placeholder="Search sneakers, hoodies and more..."
-        aria-label="Search products"
-      />
-    </div>
-    <main id="app"></main>
-    <footer>
-      <div>
-        <h2>KICK<span>ORA</span></h2>
+    <form class="global-search hidden" data-search-form>
+      <label class="sr-only" for="global-search-input">Search products</label>
+      <input id="global-search-input" name="q" placeholder="Search sneakers, streetwear and more..." />
+      <button class="btn btn-dark" type="submit">Search</button>
+    </form>
+    <main id="app" tabindex="-1"></main>
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <a class="brand" href="/" data-link>KICK<span>ORA</span></a>
         <p>Everyday essentials. Elevated street style.</p>
+        <div class="social-links">
+          <a href="https://instagram.com" aria-label="Instagram"><span class="icon" data-icon="instagram"></span></a>
+          <a href="https://x.com" aria-label="X"><span class="icon" data-icon="x"></span></a>
+          <a href="mailto:hello@kickora.demo" aria-label="Email"><span class="icon" data-icon="mail"></span></a>
+        </div>
       </div>
       <div>
-        <h4>EXPLORE</h4>
-        <a href="#/">Home</a><a href="#/shop">Shop all</a
-        ><a href="#/cart">Your cart</a>
+        <h3>Explore</h3>
+        <a href="#/shop" data-link>Shop all</a>
+        <a href="#/shop?new=true" data-link>New arrivals</a>
+        <a href="#/collections" data-link>Collections</a>
+        <a href="#/shop?sale=true" data-link>Sale</a>
       </div>
       <div>
-        <h4>HELP</h4>
-        <p>Free shipping above ₹2,999</p>
-        <p>30-day returns</p>
-        <p>Demo store — no real purchases</p>
+        <h3>Customer service</h3>
+        <a href="#/about" data-link>About us</a>
+        <a href="#/contact" data-link>Contact</a>
+        <a href="#/cart" data-link>Your cart</a>
+        <a href="#/wishlist" data-link>Wishlist</a>
       </div>
-      <p class="copyright">© 2026 KICKORA</p>
+      <div>
+        <h3>Stay in the loop</h3>
+        <p>Demo newsletter for new drops and offers.</p>
+        <form class="footer-newsletter" data-newsletter>
+          <input type="email" name="email" placeholder="Email address" aria-label="Email address" required />
+          <button class="icon-button" type="submit" aria-label="Subscribe"><span class="icon" data-icon="arrow-right"></span></button>
+        </form>
+        <p class="form-message" data-newsletter-message></p>
+      </div>
+      <p class="copyright">© 2026 KICKORA </p>
     </footer>
     <div id="toast" role="status" aria-live="polite"></div>
+    <script src="router.js" defer></script>
     <script src="app.js" defer></script>
   </body>
 </html>
