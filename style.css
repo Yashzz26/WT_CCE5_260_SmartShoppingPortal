@@ -227,6 +227,39 @@ img { display: block; max-width: 100%; }
 #toast { position: fixed; right: 22px; bottom: 22px; z-index: 50; max-width: 320px; padding: 13px 18px; color: #fff; background: var(--ink); opacity: 0; pointer-events: none; transform: translateY(10px); transition: opacity .2s, transform .2s; }
 #toast.show { opacity: 1; transform: translateY(0); }
 #toast[data-type="error"] { background: #b52e2b; }
+.assistant-orb { position: fixed; right: 24px; bottom: 24px; z-index: 9999; width: 70px; height: 70px; padding: 0; display: grid; place-items: center; border: 0; border-radius: 50%; background: #171717; box-shadow: 0 8px 30px rgb(229 57 53 / 35%); transition: transform .2s; }
+.assistant-orb:hover { transform: scale(1.08); }
+.orb-box { width: 31px; height: 31px; position: absolute; border-radius: 42% 58% 63% 37% / 42% 41% 59% 58%; background: linear-gradient(135deg, #ffae45, #e53935 62%, #861c1c); animation: assistant-orb-morph 3.3s ease-in-out infinite; filter: drop-shadow(0 0 12px #e53935); }
+.orb-box:nth-child(2) { width: 22px; height: 22px; opacity: .8; animation-delay: -.8s; }
+.orb-box:nth-child(3) { width: 13px; height: 13px; opacity: .7; animation-delay: -1.6s; }
+@keyframes assistant-orb-morph { 0%, 100% { transform: rotate(0) scale(1); border-radius: 42% 58% 63% 37% / 42% 41% 59% 58%; } 50% { transform: rotate(180deg) scale(1.18); border-radius: 62% 38% 42% 58% / 55% 60% 40% 45%; } }
+.assistant-window { position: fixed; right: 24px; bottom: 24px; z-index: 10000; width: min(400px, calc(100vw - 32px)); height: min(560px, calc(100vh - 48px)); display: grid; grid-template-rows: auto 1fr auto auto; overflow: hidden; background: #fff; border: 1px solid var(--line); box-shadow: 0 20px 60px rgb(17 17 17 / 20%); }
+.assistant-window > header { height: auto; padding: 15px 16px; display: flex; justify-content: space-between; position: static; color: #fff; background: var(--ink); border: 0; }
+.assistant-heading { display: flex; align-items: center; gap: 10px; }
+.assistant-heading strong, .assistant-heading small { display: block; }
+.assistant-heading small { color: #bbb; font-size: 10px; }
+.assistant-mini-orb { width: 30px; height: 30px; display: grid; place-items: center; position: relative; }
+.assistant-mini-orb .orb-box { width: 21px; height: 21px; }
+.assistant-mini-orb .orb-box:nth-child(2) { width: 12px; height: 12px; }
+.assistant-body { padding: 15px; overflow-y: auto; background: #fafafa; }
+.assistant-message { max-width: 88%; margin: 0 0 12px; }
+.assistant-message p { margin: 0; padding: 10px 12px; color: var(--ink); background: #fff; border: 1px solid var(--line); font-size: 12px; white-space: pre-wrap; }
+.assistant-message.user { margin-left: auto; }
+.assistant-message.user p { color: #fff; background: var(--ink); border-color: var(--ink); }
+.assistant-typing { color: var(--muted); font-size: 11px; font-style: italic; }
+.assistant-recommendations { display: grid; gap: 7px; margin-top: 7px; }
+.assistant-product { display: flex; align-items: center; gap: 8px; padding: 5px; background: #fff; border: 1px solid var(--line); font-size: 10px; }
+.assistant-product:hover { border-color: var(--red); }
+.assistant-product img { width: 35px; height: 35px; object-fit: cover; }
+.assistant-product > span:nth-child(2) { flex: 1; }
+.assistant-product .icon-svg { width: 15px; height: 15px; }
+.assistant-suggestions { padding: 10px 12px 0; display: flex; gap: 6px; overflow-x: auto; background: #fff; }
+.assistant-suggestions button { flex: 0 0 auto; padding: 6px 9px; color: var(--muted); background: #fff; border: 1px solid var(--line); border-radius: 20px; font-size: 10px; }
+.assistant-suggestions button:hover { color: var(--ink); border-color: var(--ink); }
+.assistant-form { margin: 10px 12px 12px; display: flex; align-items: end; border: 1px solid var(--line); }
+.assistant-form textarea { flex: 1; min-height: 39px; max-height: 80px; padding: 10px; resize: none; border: 0; outline: 0; font-size: 12px; }
+.assistant-form .icon-button { color: var(--red); }
+@media (prefers-reduced-motion: reduce) { .assistant-orb, .orb-box { animation: none; transition: none; } }
 @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
 @media (max-width: 1100px) {
@@ -296,4 +329,6 @@ img { display: block; max-width: 100%; }
   .form-grid, .payment-options { grid-template-columns: 1fr; }
   .site-footer { grid-template-columns: 1fr; gap: 25px; }
   .footer-brand { grid-column: auto; }
+  .assistant-orb { right: 16px; bottom: 16px; width: 60px; height: 60px; }
+  .assistant-window { right: 8px; bottom: 8px; width: calc(100vw - 16px); height: min(600px, calc(100vh - 16px)); }
 }

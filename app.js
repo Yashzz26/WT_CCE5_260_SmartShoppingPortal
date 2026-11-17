@@ -269,12 +269,13 @@ const init = async () => {
   state.wishlist = readStorage(storageKeys.wishlist, []).map(Number).filter((id) => product(id) !== undefined);
   setupEvents();
   try {
-    const response = await fetch("/products.json");
+    const response = await fetch("data/products.json");
     if (!response.ok) throw new Error("Could not load products");
     state.products = await response.json();
     state.cart = readStorage(storageKeys.cart, []).filter((item) => product(item.id));
     state.wishlist = readStorage(storageKeys.wishlist, []).map(Number).filter((id) => product(id));
     KickoraRouter.start(renderRoute);
+    window.KickoraChatbot?.init(() => state.products);
   } catch (error) {
     app.innerHTML = `<section class="empty-state page-empty"><h1>Products could not load</h1><p>Open this project with VS Code Live Server so the JSON catalogue can be fetched.</p></section>`;
     console.error(error);

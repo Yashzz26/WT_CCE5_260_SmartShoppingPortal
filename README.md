@@ -38,7 +38,7 @@ No Node.js, npm, Express, database, API key, or backend is required.
 
 ## Routing
 
-`router.js` reads the URL hash, for example `#/shop` or `#/product/1`, and uses `history.pushState()` plus `hashchange`/`popstate` events to render pages without full reloads. `app.js` contains the reusable product cards, catalogue, product details, cart, wishlist, checkout, and informational pages.
+`router.js` reads the URL hash, for example `#/shop` or `#/product/1`, and uses `history.pushState()` plus `hashchange`/`popstate` events to render pages without full reloads. `app.js` contains the reusable product cards, catalogue, product details, cart, wishlist, checkout, and informational pages. Route titles update whenever the hash changes.
 
 ## Project structure
 
@@ -48,7 +48,9 @@ WT_CCE5_260_SmartShoppingPortal/
 ├── style.css        # Responsive design system and page styles
 ├── app.js           # Product pages, cart, wishlist, and checkout
 ├── router.js        # Small browser-only hash router
-├── products.json    # Shared 24-product catalogue
+├── data/
+│   └── products.json # Shared 24-product catalogue
+├── chatbot.js       # Frontend rule-based shopping assistant
 └── README.md
 ```
 
@@ -63,6 +65,8 @@ WT_CCE5_260_SmartShoppingPortal/
 - [ ] Try invalid checkout details, then place a valid demo order.
 - [ ] Use browser back/forward navigation.
 - [ ] Check desktop, tablet, and mobile widths.
+- [ ] Ask KICKORA ASSIST for products by category, color, brand, or budget.
+- [ ] Test chatbot shipping, returns, cart help, and unknown-question fallback.
 
 ## Screenshots
 
@@ -76,4 +80,4 @@ Add screenshots from the running project here for the faculty demonstration.
 
 ## Viva talking points
 
-Explain how `fetch()` loads one shared JSON catalogue, how hash routing changes views without a full reload, why cart prices are recalculated from product data, and how `localStorage` preserves cart and wishlist state.
+Explain how `fetch()` and async/await load one shared JSON catalogue, how hash routing changes views without a full reload, why cart prices are recalculated from product data, how `localStorage` preserves cart and wishlist state, and how chatbot intent detection filters the same catalogue without an external API.

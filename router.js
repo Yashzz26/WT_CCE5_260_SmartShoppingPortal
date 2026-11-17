@@ -24,8 +24,14 @@
     });
     window.addEventListener("hashchange", () => window.dispatchEvent(new CustomEvent("kickora:navigate")));
     window.addEventListener("popstate", () => window.dispatchEvent(new CustomEvent("kickora:navigate")));
-    window.addEventListener("kickora:navigate", () => render(readLocation()));
-    render(readLocation());
+    const renderCurrent = () => {
+      const location = readLocation();
+      const title = location.path === "/" ? "KICKORA | Step Up Your Style" : `${location.path.slice(1).replaceAll("-", " ")} | KICKORA`;
+      document.title = title.replace(/\b\w/g, (letter) => letter.toUpperCase());
+      render(location);
+    };
+    window.addEventListener("kickora:navigate", renderCurrent);
+    renderCurrent();
   };
 
   window.KickoraRouter = { navigate, start, readLocation };
