@@ -196,6 +196,17 @@ const renderContact = () => {
 const renderNotFound = (title = "Page not found", copy = "The page you are looking for does not exist.") => {
   app.innerHTML = `<section class="empty-state page-empty"><span class="empty-icon">${icon("search")}</span><h1>${safe(title)}</h1><p>${safe(copy)}</p><a class="btn btn-dark" href="/" data-link>Back to home ${icon("arrow")}</a></section>`;
 };
+const loadProducts = async () => {
+  for (const path of ["data/products.json", "products.json"]) {
+    try {
+      const response = await fetch(path);
+      if (response.ok) return response.json();
+    } catch {
+      continue;
+    }
+  }
+  throw new Error("Could not load the product catalogue");
+};
 const renderRoute = ({ path, query }) => {
   document.querySelector("[data-nav]").classList.remove("open");
   document.querySelectorAll("[data-nav-route]").forEach((link) => link.classList.toggle("active", path === link.dataset.navRoute || (link.dataset.navRoute === "/shop" && ["/shop", "/search"].includes(path))));
@@ -269,9 +280,7 @@ const init = async () => {
   state.wishlist = readStorage(storageKeys.wishlist, []).map(Number).filter((id) => product(id) !== undefined);
   setupEvents();
   try {
-    const response = await fetch("data/products.json");
-    if (!response.ok) throw new Error("Could not load products");
-    state.products = await response.json();
+    state.products = await loadProducts();
     state.cart = readStorage(storageKeys.cart, []).filter((item) => product(item.id));
     state.wishlist = readStorage(storageKeys.wishlist, []).map(Number).filter((id) => product(id));
     KickoraRouter.start(renderRoute);
