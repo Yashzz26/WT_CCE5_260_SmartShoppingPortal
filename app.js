@@ -205,6 +205,9 @@ const loadProducts = async () => {
       continue;
     }
   }
+  if (Array.isArray(window.KICKORA_FALLBACK_PRODUCTS)) {
+    return window.KICKORA_FALLBACK_PRODUCTS;
+  }
   throw new Error("Could not load the product catalogue");
 };
 const renderRoute = ({ path, query }) => {

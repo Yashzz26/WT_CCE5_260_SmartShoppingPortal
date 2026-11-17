@@ -49,7 +49,8 @@ WT_CCE5_260_SmartShoppingPortal/
 ├── app.js           # Product pages, cart, wishlist, and checkout
 ├── router.js        # Small browser-only hash router
 ├── data/
-│   └── products.json # Shared 24-product catalogue
+│   ├── products.json # Primary shared 24-product catalogue
+│   └── products-fallback.js # Local reload fallback when fetch is blocked
 ├── chatbot.js       # Frontend rule-based shopping assistant
 └── README.md
 ```
@@ -80,4 +81,4 @@ Add screenshots from the running project here for the faculty demonstration.
 
 ## Viva talking points
 
-Explain how `fetch()` and async/await load one shared JSON catalogue, how hash routing changes views without a full reload, why cart prices are recalculated from product data, how `localStorage` preserves cart and wishlist state, and how chatbot intent detection filters the same catalogue without an external API.
+Explain how `fetch()` and async/await load the shared JSON catalogue, how the local fallback handles restricted file reloads, how hash routing changes views without a full reload, why cart prices are recalculated from product data, how `localStorage` preserves cart and wishlist state, and how chatbot intent detection filters the same catalogue without an external API.
